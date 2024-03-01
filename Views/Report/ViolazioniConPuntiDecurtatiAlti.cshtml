@@ -1,0 +1,33 @@
+﻿@model List<progetto_settimanaleS17L5.Models.ViolazioniConPuntiElevati>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Verbale</th>
+            <th>Data Violazione</th>
+            <th>Indirizzo Violazione</th>
+            <th>Nominativo Agente</th>
+            <th>Data Trascrizione Verbale</th>
+            <th>Importo</th>
+            <th>Decurtamento Punti</th>
+            <th>Cognome</th>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var violazione in Model)
+        {
+            <tr>
+                <td>@violazione.IDVerbale</td>
+                <td>@violazione.DataViolazione.ToString("dd/MM/yyyy")</td>
+                <td>@violazione.IndirizzoViolazione</td>
+                <td>@violazione.NominativoAgente</td>
+                <td>@violazione.DataTrascrizioneVerbale.ToString("dd/MM/yyyy")</td>
+                <td>@violazione.Importo</td>
+                <td>@violazione.DecurtamentoPunti</td>
+                <td>@violazione.Cognome</td>
+                <td>@violazione.Nome</td>
+            </tr>
+        }
+    </tbody>
+</table>

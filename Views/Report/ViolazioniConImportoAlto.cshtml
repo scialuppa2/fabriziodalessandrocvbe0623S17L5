@@ -1,0 +1,35 @@
+﻿@model List<ViolazioniConImportoElevato>
+
+@{
+    ViewBag.Title = "Violazioni Con Importo Alto";
+}
+
+<h2>Violazioni Con Importo Alto</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Verbale</th>
+            <th>Data Violazione</th>
+            <th>Indirizzo Violazione</th>
+            <th>Nominativo Agente</th>
+            <th>Data Trascrizione Verbale</th>
+            <th>Importo</th>
+            <th>Decurtamento Punti</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var violazione in Model)
+        {
+            <tr>
+                <td>@violazione.IDVerbale</td>
+                <td>@violazione.DataViolazione.ToShortDateString()</td>
+                <td>@violazione.IndirizzoViolazione</td>
+                <td>@violazione.NominativoAgente</td>
+                <td>@violazione.DataTrascrizioneVerbale.ToShortDateString()</td>
+                <td>@violazione.Importo</td>
+                <td>@violazione.DecurtamentoPunti</td>
+            </tr>
+        }
+    </tbody>
+</table>
